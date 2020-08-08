@@ -3,5 +3,5 @@ import { IPrintStatus } from './../interface/printStatus';
 import { IPrinter } from './../interface/printer';
 
 export abstract class PrinterBase implements IPrinter{
-    abstract print(fortune: ISimpleFortune): IPrintStatus
+    abstract async print(fortune: ISimpleFortune): Promise<IPrintStatus>
 };

@@ -23,5 +23,5 @@ export abstract class FortuneCookieBase implements IFortuneCookie{
     }
     id: string;
     fortune: string;
-    abstract print(): IPrintStatus
+    abstract print(): Promise<IPrintStatus>;
 }

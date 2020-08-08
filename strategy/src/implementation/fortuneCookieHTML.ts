@@ -5,9 +5,9 @@ import { HtmlPrinter } from './htmlPrinter';
 import { ISimpleFortune } from '../interface/simpleFortune';
 
 export class FortuneCookieHtml extends FortuneCookieBase implements IFortuneCookie {
-    print(): IPrintStatus{
+    async print(): Promise<IPrintStatus>{
         const printer = new HtmlPrinter();
         const fortune: ISimpleFortune = {id: this.id, fortune: this.fortune};
-        return printer.print(fortune);
+        return await printer.print(fortune);
     }
 }
