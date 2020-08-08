@@ -1,7 +1,6 @@
-import { IFortuneCookie } from '../interface/fortuneCookie.ts.ts';
-import { IFortuneCookie } from '../interface/fortuneCookie.ts.ts';
+import { IFortuneCookieFactory } from './../interface/fortuneCookieFactory';
+import { IFortuneCookie } from '../interface/fortuneCookie';
 import { RenderType } from '../enum/renderType';
-import { IFortuneCookieFactory } from './../interface/FortuneCookieFactory';
 export abstract class FortuneCookieFactoryBase implements IFortuneCookieFactory{
-     abstract getFortuneCookie(renderType: RenderType): IFortuneCookie{};
+     abstract getFortuneCookie(renderType: RenderType): IFortuneCookie;
 }

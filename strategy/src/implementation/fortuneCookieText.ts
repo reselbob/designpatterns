@@ -5,6 +5,6 @@ import { TextPrinter } from './textPrinter';
 export class FortuneCookieText extends FortuneCookieBase implements IFortuneCookie{
     print(): IPrintStatus{
         const printer = new TextPrinter();
-        return printer.print(Buffer.from(this.fortune);)
+        return printer.print(Buffer.from(this.fortune));
     }
 }
