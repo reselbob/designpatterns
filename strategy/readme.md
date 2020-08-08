@@ -1,4 +1,4 @@
 # The Strategy Pattern
-`UNDER CONSTUCTION`
+`UNDER CONSTRUCTION`
 
 ![strategy pattern](images/strategy-pattern.png)
