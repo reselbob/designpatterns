@@ -3,8 +3,10 @@ import { IController } from "../interface/controller";
 import { ICommandStatus} from "../interface/commandStatus";
 
 export abstract class ControllerBase implements IController{
-    abstract getCommands() :Array<ICommand>;
-    abstract execute(command: ICommand): ICommandStatus;
+    abstract getCommands(defaultPort: number) :Array<ICommand>;
+    execute(command: ICommand): ICommandStatus{
+        return command.execute();
+    }
     log(data: object): void{
         console.log(data);
     };
