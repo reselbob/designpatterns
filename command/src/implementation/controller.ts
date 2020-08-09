@@ -17,7 +17,4 @@ export class Controller implements IController{
     execute(command: ICommand): ICommandStatus{
         return command.execute();
     };
-    log(data: object): void{
-        console.log(data);
-    };
 }
