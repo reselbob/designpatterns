@@ -1,10 +1,10 @@
-import { ICommandStatus } from './../src/interface/commandStatus';
-
 import { expect } from 'chai';
 import {describe, it, before} from 'mocha';
 import {ServerStart} from '../src/implementation/serverstart'
 import {ServerPause} from '../src/implementation/serverpause'
 import {ServerStop} from '../src/implementation/serverstop'
+import { ICommandStatus } from './../src/interface/commandStatus';
+
 describe('Command Tests', function() {
     it('Can init startserver', function() {
         const port: number = 8080;
@@ -14,34 +14,29 @@ describe('Command Tests', function() {
 
     it('Can execute startserver', function() {
         const port: number = 8080;
-        const serverstart = new ServerStart(port);
-        const result: ICommandStatus = serverstart.execute();
+        const command = new ServerStart(port);
+        const result: ICommandStatus = command.execute();
         expect(result.statusCode).to.equal(200);
     })
 
-    it('Can init pauseserver', function() {
+    it('Can init ServerStart', function() {
         const port: number = 8080;
-        const serverpause = new ServerPause(port);
-        expect(serverpause).to.be.an('object');
-    })
-
-    it('Can execute pauseserver', function() {
-        const port: number = 8080;
-        const serverpause = new ServerPause(port);
-        const result: ICommandStatus = serverpause.execute();
+        const command = new ServerStart(port);
+        const result: ICommandStatus = command.execute();
         expect(result.statusCode).to.equal(200);
     })
 
-    it('Can init stopserver', function() {
+    it('Can execute ServerPause', function() {
         const port: number = 8080;
-        const serverstop = new ServerStop(port);
-        expect(serverstop).to.be.an('object');
+        const command = new ServerPause(port);
+        const result: ICommandStatus = command.execute();
+        expect(result.statusCode).to.equal(200);
     })
 
-    it('Can execute stopserver', function() {
+    it('Can init ServerStop', function() {
         const port: number = 8080;
-        const serverstop = new ServerStop(port);
-        const result: ICommandStatus = serverstop.execute();
+        const server = new ServerStop(port);
+        const result: ICommandStatus = server.execute();
         expect(result.statusCode).to.equal(200);
     })
 })

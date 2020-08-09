@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "test": "mocha -r ts-node/register tests/**/*_test.ts",
+    "test": "mocha -r ts-node/register tests/**/*_tests.ts",
     "build": "tsc"
   },
   "repository": {
