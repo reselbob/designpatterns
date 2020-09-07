@@ -16,7 +16,7 @@ describe('Controller Tests', function() {
     });
 
 
-    it('Can use controller to start sterver', function() {
+    it('Can use controller to start server', function() {
         const port: number = 8080;
         const command = new ServerStop(port);
         const controller = new Controller();
