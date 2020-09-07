@@ -15,6 +15,15 @@ describe('Controller Tests', function() {
         expect(commands).to.an('array');
     });
 
+
+    it('Can use controller to start sterver', function() {
+        const port: number = 8080;
+        const command = new ServerStop(port);
+        const controller = new Controller();
+        const result = controller.execute(command);
+        expect(result.statusCode).to.equal(200);
+    })
+
     it('Can get execute commands from controller', function() {
         const defaultPort: number = 8080;
         const controller = new Controller()
